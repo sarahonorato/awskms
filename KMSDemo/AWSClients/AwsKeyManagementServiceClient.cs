@@ -92,29 +92,5 @@ namespace KMSDemo.AwsClients
                 throw;
             }
         }
-
-        public string DecryptPassword(string encryptedText)
-        {
-            try
-            {
-                var fromBase64Bytes = Convert.FromBase64String(encryptedText);
-                var kmsClient = new AmazonKeyManagementServiceClient(_credentials, _region);
-                var decryptRequest = new DecryptRequest
-                {
-                    CiphertextBlob = new System.IO.MemoryStream(fromBase64Bytes, 0, fromBase64Bytes.Length)
-                };
-                var response = kmsClient.DecryptAsync(decryptRequest);
-                if (response.Result == null)
-                {
-                    return string.Empty;
-                }
-                return Encoding.UTF8.GetString(response.Result.Plaintext.ToArray());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
     }
 }
