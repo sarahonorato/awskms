@@ -1,6 +1,6 @@
 # How to Encrypt/Decrypt Data with AWS KMS on .Net Core
-Console built with .Net Core 3.1 accessing AWS KMS to encrypt and decrypt data.
-Replace the access key, secret key and region by yours.
+Console built with .Net Core 3.1 accessing AWS KMS to encrypt and decrypt data.<br/>
+Replace the access key, secret key and region by yours.<br/>
 ![Result](https://github.com/sarahonorato/awskms/blob/main/Result.PNG)
 
 
